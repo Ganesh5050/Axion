@@ -20,9 +20,11 @@ export default function Login() {
 
         {/* Logo and Brand */}
         <Link to="/" className="flex flex-col items-center mb-8">
-          <div className="h-16 w-16 rounded-2xl bg-[#1a1f36] flex items-center justify-center mb-4">
-            <div className="h-8 w-8 rounded-md border-4 border-white" />
-          </div>
+          <img
+            src="/logo.png"
+            alt="Axion Logo"
+            className="h-16 w-16 rounded-2xl object-contain mb-4"
+          />
           <span className="text-2xl font-semibold text-gray-900">Axion</span>
         </Link>
 
@@ -48,8 +50,8 @@ export default function Login() {
             </div>
 
             {/* Continue Button */}
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="w-full h-12 text-base font-medium bg-[#5B5FED] hover:bg-[#4B4FDD]"
             >
               Continue
@@ -95,7 +97,10 @@ export default function Login() {
             {/* Sign Up Link */}
             <div className="text-center text-sm text-muted-foreground">
               Don't have an account?{" "}
-              <Link to="/signup" className="text-primary hover:underline font-medium">
+              <Link
+                to="/signup"
+                className="text-primary hover:underline font-medium"
+              >
                 Sign up
               </Link>
             </div>

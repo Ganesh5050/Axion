@@ -11,9 +11,11 @@ export const Footer = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Logo */}
             <div className="flex items-center space-x-3">
-              <div className="h-8 w-8 rounded-lg bg-white flex items-center justify-center">
-                <div className="h-4 w-4 rounded-sm border-2 border-[#0f1419]" />
-              </div>
+              <img
+                src="/logo.png"
+                alt="Axion Logo"
+                className="h-8 w-8 rounded-lg object-contain bg-white p-1"
+              />
               <span className="text-xl font-semibold">Axion</span>
             </div>
 
@@ -23,11 +25,12 @@ export const Footer = () => {
                 Enter a new age of knowledge work
               </h2>
               <p className="text-lg text-white/70 leading-relaxed">
-                Axion is an AI-first workspace that enables fast, accurate research in spreadsheets.
+                Axion is an AI-first workspace that enables fast, accurate
+                research in spreadsheets.
               </p>
               <Link to="/demo">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-white text-[#0f1419] hover:bg-gray-100 font-medium px-6 py-3 inline-flex items-center gap-2"
                 >
                   Request a Demo
@@ -48,17 +51,26 @@ export const Footer = () => {
               <h3 className="font-medium mb-4 text-white">Product</h3>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <Link to="/" className="text-white/60 hover:text-white transition-colors">
+                  <Link
+                    to="/"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/templates" className="text-white/60 hover:text-white transition-colors">
+                  <Link
+                    to="/templates"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Templates
                   </Link>
                 </li>
                 <li>
-                  <a href="/#pricing" className="text-white/60 hover:text-white transition-colors">
+                  <a
+                    href="/#pricing"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Pricing
                   </a>
                 </li>
@@ -70,12 +82,18 @@ export const Footer = () => {
               <h3 className="font-medium mb-4 text-white">Company</h3>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <Link to="/blog" className="text-white/60 hover:text-white transition-colors">
+                  <Link
+                    to="/blog"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link to="/careers" className="text-white/60 hover:text-white transition-colors">
+                  <Link
+                    to="/careers"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Careers
                   </Link>
                 </li>
@@ -87,12 +105,18 @@ export const Footer = () => {
               <h3 className="font-medium mb-4 text-white">Support</h3>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <Link to="/demo" className="text-white/60 hover:text-white transition-colors">
+                  <Link
+                    to="/demo"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Request a Demo
                   </Link>
                 </li>
                 <li>
-                  <a href="#docs" className="text-white/60 hover:text-white transition-colors">
+                  <a
+                    href="#docs"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Documentation
                   </a>
                 </li>
@@ -104,12 +128,22 @@ export const Footer = () => {
               <h3 className="font-medium mb-4 text-white">Socials</h3>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Twitter
                   </a>
                 </li>
                 <li>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     LinkedIn
                   </a>
                 </li>
@@ -121,17 +155,26 @@ export const Footer = () => {
               <h3 className="font-medium mb-4 text-white">Legal</h3>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <a href="#privacy" className="text-white/60 hover:text-white transition-colors">
+                  <a
+                    href="#privacy"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#acceptable-use" className="text-white/60 hover:text-white transition-colors">
+                  <a
+                    href="#acceptable-use"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Acceptable Use
                   </a>
                 </li>
                 <li>
-                  <a href="#fulfillment" className="text-white/60 hover:text-white transition-colors">
+                  <a
+                    href="#fulfillment"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
                     Fulfillment
                   </a>
                 </li>

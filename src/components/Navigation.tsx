@@ -16,7 +16,7 @@ interface DropdownMenuProps {
 
 const DropdownMenu = ({ items, isOpen }: DropdownMenuProps) => {
   if (!isOpen) return null;
-  
+
   return (
     <div className="absolute left-0 top-full pt-2 z-50">
       <div className="w-[400px] rounded-lg border border-border bg-white shadow-xl animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200">
@@ -28,7 +28,9 @@ const DropdownMenu = ({ items, isOpen }: DropdownMenuProps) => {
                 to={item.href}
                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 cursor-pointer"
               >
-                <div className="text-sm font-medium leading-none text-gray-900">{item.title}</div>
+                <div className="text-sm font-medium leading-none text-gray-900">
+                  {item.title}
+                </div>
                 <p className="line-clamp-2 text-sm leading-snug text-gray-600">
                   {item.description}
                 </p>
@@ -76,7 +78,8 @@ export const Navigation = () => {
 
   useEffect(() => {
     return () => {
-      if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
+      if (solutionsTimeoutRef.current)
+        clearTimeout(solutionsTimeoutRef.current);
       if (productTimeoutRef.current) clearTimeout(productTimeoutRef.current);
     };
   }, []);
@@ -138,50 +141,68 @@ export const Navigation = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-[#1a1f36] flex items-center justify-center">
-              <div className="h-4 w-4 rounded-sm border-2 border-white" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Axion Logo"
+              className="h-8 w-8 rounded-lg object-contain"
+            />
             <span className="text-xl font-semibold text-gray-900">Axion</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-                 {/* Solutions Dropdown */}
-                 <div 
-                   className="relative"
-                   onMouseEnter={handleSolutionsEnter}
-                   onMouseLeave={handleSolutionsLeave}
-                 >
-                   <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50">
-                     Solutions
-                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
-                   </button>
-                   <DropdownMenu items={solutionsItems} isOpen={solutionsOpen} />
-                 </div>
+            {/* Solutions Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={handleSolutionsEnter}
+              onMouseLeave={handleSolutionsLeave}
+            >
+              <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50">
+                Solutions
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${solutionsOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              <DropdownMenu items={solutionsItems} isOpen={solutionsOpen} />
+            </div>
 
-                 {/* Product Dropdown */}
-                 <div 
-                   className="relative"
-                   onMouseEnter={handleProductEnter}
-                   onMouseLeave={handleProductLeave}
-                 >
-                   <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50">
-                     Product
-                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${productOpen ? 'rotate-180' : ''}`} />
-                   </button>
-                   <DropdownMenu items={productItems} isOpen={productOpen} />
-                 </div>
+            {/* Product Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={handleProductEnter}
+              onMouseLeave={handleProductLeave}
+            >
+              <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50">
+                Product
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${productOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              <DropdownMenu items={productItems} isOpen={productOpen} />
+            </div>
 
-            <Link to="/templates" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50">
+            <Link
+              to="/templates"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50"
+            >
               Templates
             </Link>
-            <Link to="/careers" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50">
+            <Link
+              to="/careers"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50"
+            >
               Careers
             </Link>
-            <Link to="/blog" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50">
+            <Link
+              to="/blog"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50"
+            >
               Blog
             </Link>
-            <a href="/#pricing" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50">
+            <a
+              href="/#pricing"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50"
+            >
               Pricing
             </a>
           </div>
@@ -189,7 +210,10 @@ export const Navigation = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
             <Link to="/login">
-              <Button variant="ghost" className="text-sm text-gray-700 hover:text-gray-900">
+              <Button
+                variant="ghost"
+                className="text-sm text-gray-700 hover:text-gray-900"
+              >
                 Log in
               </Button>
             </Link>
@@ -206,7 +230,11 @@ export const Navigation = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
@@ -214,9 +242,11 @@ export const Navigation = () => {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4 space-y-4">
             <div className="space-y-2">
-              <div className="px-4 py-2 text-sm font-medium text-gray-500">Solutions</div>
+              <div className="px-4 py-2 text-sm font-medium text-gray-500">
+                Solutions
+              </div>
               {solutionsItems.map((item, index) => (
-                <Link 
+                <Link
                   key={index}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
@@ -227,9 +257,11 @@ export const Navigation = () => {
               ))}
             </div>
             <div className="space-y-2">
-              <div className="px-4 py-2 text-sm font-medium text-gray-500">Product</div>
+              <div className="px-4 py-2 text-sm font-medium text-gray-500">
+                Product
+              </div>
               {productItems.map((item, index) => (
-                <Link 
+                <Link
                   key={index}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
@@ -240,10 +272,34 @@ export const Navigation = () => {
               ))}
             </div>
             <div className="space-y-2 border-t border-gray-200 pt-4">
-              <Link to="/templates" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Templates</Link>
-              <Link to="/careers" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Careers</Link>
-              <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Blog</Link>
-              <a href="/#pricing" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Pricing</a>
+              <Link
+                to="/templates"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Templates
+              </Link>
+              <Link
+                to="/careers"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Careers
+              </Link>
+              <Link
+                to="/blog"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Blog
+              </Link>
+              <a
+                href="/#pricing"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Pricing
+              </a>
             </div>
             <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-gray-200">
               <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
